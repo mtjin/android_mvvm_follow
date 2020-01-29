@@ -7,16 +7,16 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-const val  API_KEY = "07dc413b6df4269a0fb1aa044a76b4b7"
-const val  BASE_URL = "https://api.themoviedb.org/3/"
+const val API_KEY = "07dc413b6df4269a0fb1aa044a76b4b7"
+const val BASE_URL = "https://api.themoviedb.org/3/"
 const val POSTER_BASE_URL = "https://image.tmdb.org/t/p/w342"
 
 object TheMovieDBClient {
     fun getClient(): TheMovieDBInterface {
-
+        // // Interceptor는 네트워크 통신을 하는 중간에, 무언가를 공통적으로 실어보내거나 받아서 써야할 떄 사용한다.
         val requestInterceptor = Interceptor { chain ->
             // Interceptor take only one argument which is a lambda function so parenthesis can be omitted
-
+            // 참고: https://developer88.tistory.com/67
             val url = chain.request()
                 .url()
                 .newBuilder()
