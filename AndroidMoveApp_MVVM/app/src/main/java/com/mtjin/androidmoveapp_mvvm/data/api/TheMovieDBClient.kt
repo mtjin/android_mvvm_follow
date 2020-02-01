@@ -11,6 +11,9 @@ const val API_KEY = "07dc413b6df4269a0fb1aa044a76b4b7"
 const val BASE_URL = "https://api.themoviedb.org/3/"
 const val POSTER_BASE_URL = "https://image.tmdb.org/t/p/w342"
 
+const val FIRST_PAGE = 1
+const val POST_PER_PAGE = 20
+
 object TheMovieDBClient {
     fun getClient(): TheMovieDBInterface {
         // // Interceptor는 네트워크 통신을 하는 중간에, 무언가를 공통적으로 실어보내거나 받아서 써야할 떄 사용한다.
